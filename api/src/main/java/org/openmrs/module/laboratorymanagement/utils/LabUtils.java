@@ -807,11 +807,12 @@ log.info(">>>>>>>>>>>>order obs map>>>>>>>>>>>>>> "+orderObsMap);
 		waitingAppointment.setLocation(Context.getLocationService()
 				.getDefaultLocation());
 
-		log.info("<<<<<<<<<____Service____" + service.toString()
-				+ "__________>>>>>>>");
+		if(service!=null) {
+			log.info("<<<<<<<<<____Service____" + service.toString()
+					+ "__________>>>>>>>");
 
-		waitingAppointment.setService(service);
-
+			waitingAppointment.setService(service);
+		}
 		if (encounter != null)
 			waitingAppointment.setEncounter(encounter);
 

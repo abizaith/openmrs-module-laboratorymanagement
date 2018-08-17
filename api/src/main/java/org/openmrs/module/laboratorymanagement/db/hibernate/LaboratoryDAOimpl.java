@@ -584,11 +584,13 @@ public class LaboratoryDAOimpl implements LaboratoryDAO {
 		todayDate.add(chk);
 		document.add(todayDate);
 		document.add(fontTitle.process("REPUBLIQUE DU RWANDA\n"));
-		document.add(fontTitle.process("POLICE NATIONALE\n"));
-		document.add(fontTitle.process("KACYIRU POLICE HOSPITAL\n"));
-		document.add(fontTitle.process("B.P. 6183 KIGALI\n"));
-		document.add(fontTitle.process("Tel : 584897\n"));
-		document.add(fontTitle.process("E-mail : medical@police.gov.rw"));
+		document.add(fontTitle.process(Context.getAdministrationService().getGlobalProperty("laboratorymanagement.healthfacility.name")));
+		document.add(fontTitle.process("\n"));
+		document.add(fontTitle.process(Context.getAdministrationService().getGlobalProperty("laboratorymanagement.healthfacility.POBOX")));
+		document.add(fontTitle.process("\n"));
+		document.add(fontTitle.process(Context.getAdministrationService().getGlobalProperty("laboratorymanagement.healthfacility.telephone")));
+		document.add(fontTitle.process("\n"));
+		document.add(fontTitle.process("E-mail : "+Context.getAdministrationService().getGlobalProperty("laboratorymanagement.healthfacility.email")));
 		// End Report title
 
 		document.add(new Paragraph("\n"));
